@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('nom', 50);
             $table->float('prix');
+            $table->timestamps();
 
-            $table->foreignId('types_prestation_id')->constrained()->onDelete('cascade');
+            $table->foreignId('type_prestation_id')->constrained()->onDelete('cascade');
         });
     }
 

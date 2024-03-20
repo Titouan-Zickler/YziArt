@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('nom', 50);
             $table->float('prix');
             $table->date('date');
-            $table->foreignId('types_atelier_id')->constrained()->onDelete('cascade');
+            $table->timestamps();
+            $table->foreignId('type_atelier_id')->constrained()->onDelete('cascade');
         });
     }
 
