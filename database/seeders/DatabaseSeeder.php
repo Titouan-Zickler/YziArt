@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\CategoriePost;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -29,8 +31,13 @@ class DatabaseSeeder extends Seeder
             PrestationSeeder::class,
             CommandeSeeder::class,
             TailleSeeder::class,
-            
-            ArticleSeeder::class
+            CategoriePostSeeder::class,
+            PostSeeder::class,
+            ArticleSeeder::class,
+            ArticleTailleSeeder::class,
+            ReservationAtelierSeeder::class,
+            CommandeArticleSeeder::class,
+            ReservationPrestationSeeder::class
         ]);
     }
 }

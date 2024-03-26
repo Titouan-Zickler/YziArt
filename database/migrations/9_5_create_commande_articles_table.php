@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reservations_prestations', function (Blueprint $table) {
+        Schema::create('commande_articles', function (Blueprint $table) {
             $table->timestamps();
-            $table->date('date_prestation');
+            $table->integer('quantite');
 
-            $table->primary(['user_id','prestation_id']);
+            $table->primary(['article_id','commande_id']);
 
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('prestation_id')->constrained()->onDelete('cascade');
 
+            $table->foreignId('article_id')->constrained()->onDelete('cascade');
+            $table->foreignId('commande_id')->constrained()->onDelete('cascade');
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reservation_prestation');
+        Schema::dropIfExists('commande_articles');
     }
 };

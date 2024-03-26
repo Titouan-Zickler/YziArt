@@ -11,15 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('commandes_articles', function (Blueprint $table) {
+        Schema::create('categorie_posts', function (Blueprint $table) {
+            $table->id();
+            $table->string('categorie_post', 50);
             $table->timestamps();
-            $table->integer('quantite');
 
-            $table->primary(['article_id','commande_id']);
-
-
-            $table->foreignId('article_id')->constrained()->onDelete('cascade');
-            $table->foreignId('commande_id')->constrained()->onDelete('cascade');
         });
     }
 
@@ -28,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('regrouper_commande_article');
+        Schema::dropIfExists('categorie_posts');
     }
 };

@@ -15,12 +15,10 @@ class TailleSeeder extends Seeder
     public function run(): void
     {
         //
-        Taille::create([
-            'taille' => 'S'
-        ]);
-
-        Taille::create([
-            'taille' => 'M'
-        ]);
+        Taille::factory()->count(3)->sequence(
+            [ 'taille' => 'M' ],
+            [ 'taille' => 'L' ],
+            [ 'taille' => 'XL' ]
+        )->create();;
     }
 }
